@@ -1,7 +1,10 @@
 import Grabacion from "./components/Grabacion"
 import Transcripcion from "./components/Transcripcion"
+import useRecorder from "./hooks/useRecorder"
 
 function App() {
+
+  const { audioURL, isRecording, startRecording, stopRecording } = useRecorder()
 
   return (
     <>
@@ -20,13 +23,15 @@ function App() {
         <section className="md:col-span-1 text-center">
             
             <Grabacion 
-            
+              startRecording={startRecording}
+              stopRecording={stopRecording}
+              isRecording={isRecording}
             />
 
             <div className="mt-5">
               <p className="text-2xl font-bold py-3">¿Qué grabar?</p>
               <div className="text-lg text-left px-5 py-2 bg-slate-500 text-slate-100 rounded-lg mx-6">
-                El modelo que fue entrenado es solo para palabras selectas en ingles, palabras como:
+                El modelo que fue entrenado solo para palabras selectas en ingles, palabras como:
                 <p className="text-left px-10 py-2">
                     Yes - No - Up - Down - Left - Right - On - Off - Stop - Go
                 </p>
@@ -38,16 +43,16 @@ function App() {
           
           <section className="md:col-span-1">
             <Transcripcion 
-            
+              audioURL={audioURL}
             
             />
           </section>
 
-          
-
-
-
         </main>
+
+        <footer className="text-center text-slate-950 mt-10">
+          <p>❤️ Mi GitHub: <a href="https://github.com/Defiant7426" className="font-bold">Defiant7426</a></p>
+        </footer>
 
       </div>
       

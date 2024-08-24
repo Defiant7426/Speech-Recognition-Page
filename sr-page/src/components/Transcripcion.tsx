@@ -1,4 +1,10 @@
-export default function Transcripcion() {
+
+type AudioRecorderProps = {
+    audioURL: string,
+}
+
+
+export default function Transcripcion({ audioURL }: AudioRecorderProps) {
   return (
     <>
     
@@ -6,8 +12,12 @@ export default function Transcripcion() {
     <div className="bg-slate-400 text-slate-950 p-5 rounded-lg">
         <p className="text-lg text-left">Aún no se grabo nada</p>
     </div>
-    <button className="bg-teal-500 text-white font-bold py-2 px-5 rounded-md mt-5">Reproducir grabación</button>
     
+    <div className="flex justify-center">
+        {audioURL && <audio src={audioURL} controls className="block mt-5"></audio>}
+    </div>
+    
+
     </>
   )
 }
