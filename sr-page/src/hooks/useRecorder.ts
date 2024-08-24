@@ -3,6 +3,7 @@ import { useEffect,useState } from "react"
 export default function useRecorder() {
 
     const [recorder, setRecorder] = useState<MediaRecorder | null>(null)
+    const [audioBlob, setAudioBlob] = useState<Blob | null>(null)
     const [audioURL, setAudioURL] = useState('')
     const [isRecording, setIsRecording] = useState(false)
 
@@ -33,6 +34,7 @@ export default function useRecorder() {
 
             recorder.ondataavailable = (e) => {
                 const audioBlob = new Blob([e.data], { type : 'audio/wav' }) // creamos un blob con los datos de la grabación
+                setAudioBlob(audioBlob)
                 const audioURL = URL.createObjectURL(audioBlob) // creamos una URL para reproducir el audio
                 setAudioURL(audioURL)
             }
@@ -45,6 +47,8 @@ export default function useRecorder() {
             setIsRecording(false)
         }
     }
+
+    // aqui enviamos el audioBlob a la API de Google Cloud
 
   return {
     audioURL,
