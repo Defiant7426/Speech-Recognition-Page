@@ -1,16 +1,17 @@
 
 type AudioRecorderProps = {
     audioURL: string,
+    prediction: string
 }
 
 
-export default function Transcripcion({ audioURL }: AudioRecorderProps) {
+export default function Transcripcion({ audioURL,prediction }: AudioRecorderProps) {
   return (
     <>
     
-    <h2 className="text-2xl font-bold mb-5">Transcripción</h2>
+    <h2 className="text-2xl font-bold mb-5">Palabra Reconocida</h2>
     <div className="bg-slate-400 text-slate-950 p-5 rounded-lg">
-        <p className="text-lg text-left">Aún no se grabo nada</p>
+        {prediction ? <p className="text-lg text-left">{prediction}</p> : <p className="text-lg text-left">Aún no se grabo nada</p>}
     </div>
     
     <div className="flex justify-center">

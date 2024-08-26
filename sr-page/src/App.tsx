@@ -4,7 +4,7 @@ import useRecorder from "./hooks/useRecorder"
 
 function App() {
 
-  const { audioURL, isRecording, startRecording, stopRecording } = useRecorder()
+  const { audioURL, isRecording, prediction, startRecording, stopRecording, sendAudio, audioBlob } = useRecorder()
 
   return (
     <>
@@ -26,6 +26,8 @@ function App() {
               startRecording={startRecording}
               stopRecording={stopRecording}
               isRecording={isRecording}
+              sendAudio={sendAudio}
+              audioBlob={audioBlob}
             />
 
             <div className="mt-5">
@@ -44,7 +46,7 @@ function App() {
           <section className="md:col-span-1">
             <Transcripcion 
               audioURL={audioURL}
-            
+              prediction={prediction}
             />
           </section>
 
