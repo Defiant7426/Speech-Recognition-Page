@@ -35,7 +35,7 @@ function App() {
               <div className="text-lg text-left px-5 py-2 bg-slate-500 text-slate-100 rounded-lg mx-6">
                 El modelo fue entrenado solo para palabras selectas en ingles, palabras como:
                 <p className="text-left px-10 py-2">
-                    Yes - No - Up - Down - Left - Right - On - Off - Stop - Go
+                    Yes - No - One - Down - Left - Right - On - Off - Stop - Go - Two - Nine - Three - Zero - Dog - Bed - Happy
                 </p>
                 Con el tiempo mejoraré el modelo para que pueda reconocer más palabras y oraciones completas en español.
                 Si te gusta o quisieras colaborar hazmelo saber ;)

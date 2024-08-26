@@ -13,7 +13,7 @@ export default function Grabacion({ isRecording, startRecording, stopRecording, 
 
     
 
-  const urlPredict = 'http://localhost:8000/predict'
+  const urlPredict = '/api/predict'
 
     useEffect(() => {
         if(audioBlob){
