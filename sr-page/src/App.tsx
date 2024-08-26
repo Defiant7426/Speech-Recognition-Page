@@ -33,7 +33,7 @@ function App() {
             <div className="mt-5">
               <p className="text-2xl font-bold py-3">¿Qué grabar?</p>
               <div className="text-lg text-left px-5 py-2 bg-slate-500 text-slate-100 rounded-lg mx-6">
-                El modelo que fue entrenado solo para palabras selectas en ingles, palabras como:
+                El modelo fue entrenado solo para palabras selectas en ingles, palabras como:
                 <p className="text-left px-10 py-2">
                     Yes - No - Up - Down - Left - Right - On - Off - Stop - Go
                 </p>
